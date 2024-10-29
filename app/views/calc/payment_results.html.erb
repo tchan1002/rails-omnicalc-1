@@ -5,28 +5,28 @@
     APR
   </dt>
   <dd>
-    <%= %>
+    <%= @apr.to_fs(:percentage, {:precision => 4}) %>
   </dd>
 
   <dt>
     Number of years
   </dt>
   <dd>
-    <%=  %>
+    <%= @years %>
   </dd>
 
   <dt>
     Principal
   </dt>
   <dd>
-    <%=  %>
+    <%= @principal.to_fs (:currency) %>
   </dd>
 
   <dt>
     Payment
   </dt>
   <dd>
-    <%=  %>
+    <%= @payment.to_fs (:currency) %>
   </dd>
 </dl>
 

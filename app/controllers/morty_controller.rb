@@ -19,7 +19,13 @@ class MortyController < ApplicationController
     render({:template => "calc/payment_new"})
   end
   def payment_results
-  
+    @apr = params["user_apr"].to_f
+    @years = params["user_years"].to_i
+    @principal = params["user_pv"].to_f
+    @interest_rate = @apr/100/12
+    @months = @years * 12
+    @payment = @interest_rate * @principal / (1 - (1+@interest_rate)**-@months )
+
     render({:template => "calc/payment_results"})
   end
   def random_new
